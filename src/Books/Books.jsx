@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { CiStar } from "react-icons/ci";
+import { Link } from "react-router-dom";
 
 const Books = () => {
 
     const [booksList,setBooksList]=useState([]);
+    const [booksDetails,setBooksDetails]=([])
 
     useEffect(()=>{
         fetch('BooksData.json')
@@ -11,13 +13,18 @@ const Books = () => {
         .then(data=>setBooksList(data))
     },[])
 
+    
+
 
     return (
         <div>
-            <h1>total books list : {booksList.length}</h1>
-            <div className="grid grid-cols-3 p-4 ">
+            <h1 className="text-4xl text-center">Books</h1>
+           
+            <div  className="grid grid-cols-3 p-4 ">
+           
               {
-                 booksList.map(bookList=><div className="m-6 bg-gray-400 p-4" key={bookList.bookId} >
+                 booksList.map(bookList=><Link to={`/books/${bookList.bookId}`}>
+                     <div className="m-6 bg-gray-400 p-4" key={bookList.bookId} >
                      <img className="w-60 h-44 bg-slate-400" src={bookList.image} alt="" srcset="" />
                      <div className="flex gap-5 mr-4 my-3 ">
                         <h3 className="bg-slate-400 rounded-lg p-2">young adult</h3>
@@ -34,10 +41,12 @@ const Books = () => {
                         
                      </div>
                     
-                 </div>)
+                 </div>
+                 </Link> )
               }
-            </div>
             
+            </div>
+           
            
         </div>
     );

@@ -1,17 +1,15 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
-import Banner from "../Banner/Banner";
+
 
 
 const Root = () => {
     return (
-        <div>
-            <Navbar></Navbar>
-            <Banner></Banner>
+        <div className="bg-slate-50 m-4">
+            <Navbar></Navbar>  
             <Outlet></Outlet>
-            <Footer></Footer>
-            
+            <Footer></Footer>           
         </div>
     );
 };
