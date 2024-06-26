@@ -6,10 +6,12 @@ import Footer from "../Footer/Footer";
 
 const Root = () => {
     return (
-        <div className="bg-slate-50 m-4">
-            <Navbar></Navbar>  
-            <Outlet></Outlet>
-            <Footer></Footer>           
+        <div className="bg-slate-50 m-4 ">
+            <Navbar></Navbar>
+            
+            <Outlet ></Outlet>
+             
+            <Footer ></Footer>           
         </div>
     );
 };
