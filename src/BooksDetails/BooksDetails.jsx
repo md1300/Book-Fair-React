@@ -3,6 +3,7 @@ import { useLoaderData, useParams } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { saveStoredBooksInformation } from "../../Utility/localStorage";
+import { saveIdInLocalStorage } from "../../Utility2/LocalStorage2";
 
 
     
@@ -13,18 +14,18 @@ const BooksDetails = () => {
     const {id}=useParams()
     // const idInt=parseInt(id)
     
+    
     const loadBook=loadBooks.find(book=>book.bookId===id)
 
-
+   
     const notify = () =>{
         saveStoredBooksInformation(id)
-        const toastCondition=loadBook;
-        if(toastCondition){
-            toast('add to read')
-        }
-        else{
-            toast('already read')
-        }
+               
+       
+    } 
+    const WishListBook= () =>{
+        saveIdInLocalStorage(id)
+   
     } 
     
     return (
@@ -50,8 +51,8 @@ const BooksDetails = () => {
                     <h3>Rating             : {loadBook.rating}</h3>
                  </div>
                  <div className="flex gap-5 my-6">
-                    <button  onClick={notify} className="btn btn-accent">Read</button>
-                    <button className="btn btn-accent">Wishlist</button>
+                    <button onClick={notify} className="btn btn-accent">Read</button>
+                    <button onClick={WishListBook}  className="btn btn-accent">Wishlist</button>
                     <ToastContainer />
                  </div>
             </div>

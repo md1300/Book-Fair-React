@@ -6,6 +6,7 @@ import { getStoredBooksInformation } from "../../Utility/localStorage";
 const ReadBooks = () => {
     const booksInformation=useLoaderData();
     
+    // console.log(booksInformation)
     const [listedBooksList,setListedBooksList]=useState([])
 
     useEffect(()=>{
