@@ -14,11 +14,13 @@ import Wishlist from './Wishlist/Wishlist';
 import ReadBooks from './ReadBooks/ReadBooks';
 import About from './About/About';
 import Contact from './Contact/Contact';
+import ErrorPage from './ErrorPage/ErrorPage';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement:<ErrorPage></ErrorPage>,
     children:[
       {
         path:"/",
