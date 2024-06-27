@@ -15,13 +15,14 @@ const ReadBooks = () => {
      if(booksInformation.length>0){
         const booksIdInformation=booksInformation.filter(bookIdInformation=>booksInformationId.includes(bookIdInformation.bookId))
         setListedBooksList(booksIdInformation)
-       }   
+       } 
+    //    console.log(booksInformationId)  
     },[])
    
     return (
        <div>
         {
-            listedBooksList.map(listedBookList=><div className="border border-2 p-3 m-4">
+            listedBooksList.map(listedBookList=><div className=" border-2 p-3 m-4">
                 <h1>{listedBookList.bookName}</h1>
                 <h2>{listedBookList.author}</h2>
                 

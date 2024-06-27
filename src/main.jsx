@@ -41,11 +41,12 @@ const router = createBrowserRouter([
       },
       {
         path:"/readPage",
+        loader:()=>fetch('/BooksData.json'),
         element:<ReadPage></ReadPage>
       },
       {
         path:"/books/:id",
-        loader:()=>fetch('BooksData.json'),
+        loader:()=>fetch('/BooksData.json'),
         element:<BooksDetails></BooksDetails>
       },
     ]

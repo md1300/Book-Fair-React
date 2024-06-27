@@ -4,6 +4,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { saveStoredBooksInformation } from "../../Utility/localStorage";
 import { saveIdInLocalStorage } from "../../Utility2/LocalStorage2";
+import { addReadListToWishlist } from "../Utility3/localStorage3";
+
 
 
     
@@ -20,7 +22,7 @@ const BooksDetails = () => {
    
     const notify = () =>{
         saveStoredBooksInformation(id)
-               
+        addReadListToWishlist()
        
     } 
     const WishListBook= () =>{
