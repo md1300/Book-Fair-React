@@ -4,6 +4,7 @@ import { useLoaderData } from 'react-router-dom';
 import Rechart from '../Rechart/Rechart';
 
 const ReadPage = () => {
+    
       const loaderData=useLoaderData()
       
       const [useData,setUseData]=useState([])
@@ -18,15 +19,9 @@ const ReadPage = () => {
        
       },[])
 
-
-      
-    
     return (
         <div>
-         
-                <Rechart data={useData}></Rechart>
-            
-            
+                <Rechart data={useData}></Rechart>       
         </div>
     );
 };

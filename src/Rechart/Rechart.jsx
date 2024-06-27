@@ -19,7 +19,7 @@ const TriangleBar = (props) => {
 
 
 const Rechart = ({data}) => {
-    console.log(data)
+    // console.log(data)
     return (
         <div>
             <BarChart
